@@ -15,7 +15,7 @@ echo "[Start] Starting VNC server..." | tee -a /var/log/startup.log
 x11vnc -display :1 -nopw -forever &
 
 echo "[Start] Starting noVNC on port 6080..." | tee -a /var/log/startup.log
-websockify --web=/usr/share/novnc/ 6080 localhost:5900 &
+websockify --web=/usr/share/novnc/ --index vnc_auto.html 6080 localhost:5900 &
 
 echo "[Start] (Optional) Launching Android Studio..." | tee -a /var/log/startup.log
 studio &
